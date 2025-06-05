@@ -4,6 +4,7 @@
   "description": "<!-- // op.map((a)=>(                                                                \r //     <Cards po={a}  />\r // ))",
   "scripts": {
     "start": " parcel index.html",
+     "build": "parcel build index.html",
     "test": "jest"
   },
   "author": "",

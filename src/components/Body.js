@@ -2,6 +2,7 @@
 import Cards from "./Cards" ;
 import { useEffect, useState } from "react";
 import PromotedLabel from "./PromotedLabel";
+import op from "../../util/mocdata"
 
 
 
@@ -17,11 +18,23 @@ const Body=()=>{
    
 
 const fetchdata=async ()=>{
-    const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.37240&lng=78.43780&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-    const json=await data.json();
-    console.log(json)
-    setdibya(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
-    setduplicatedibya(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+  try {
+  const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.37240&lng=78.43780&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+  const json = await data.json();
+  console.log(json);
+  setdibya(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+  setduplicatedibya(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+} catch (error) {
+  console.error("Failed to fetch restaurant data:", error);
+  console.log("pls download corr extension and on it else api will not work")
+  const json = op;
+  console.log(json);
+  setdibya(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+  setduplicatedibya(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+ 
+}
+
+
 };
   
 const SetPromotedLabel=PromotedLabel(Cards);

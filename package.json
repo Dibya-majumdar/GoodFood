@@ -1,10 +1,13 @@
 {
   "name": "react_js",
   "version": "1.0.0",
-  "description": "<!-- // op.map((a)=>(                                                                \r //     <Cards po={a}  />\r // ))",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "start": " parcel index.html",
-     "build": "parcel build index.html",
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "test": "jest"
   },
   "author": "",
@@ -15,12 +18,14 @@
     "@babel/preset-react": "^7.25.9",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
     "babel-jest": "^29.7.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
-    "parcel": "^2.13.0",
-    "process": "^0.11.10",
-    "tailwindcss": "^3.4.15"
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "vite": "^6.0.7"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
